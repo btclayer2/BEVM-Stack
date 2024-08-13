@@ -4,12 +4,14 @@
 
 BevmStack is a modular, open-source blockchain technology stack designed to seamlessly integrate Bitcoin assets with Ethereum Virtual Machine (EVM) compatible smart contract functionality. Drawing inspiration from the OP Stack design philosophy, it provides a comprehensive set of tools and components for building, deploying, and operating scalable blockchain networks that are tightly integrated with the Bitcoin ecosystem.
 
-The core objectives of BevmStack are:
+### 1.1 Key Features
 
-* Enabling smart contract functionality for Bitcoin assets
-* Providing high-throughput and low-latency transaction processing
-* Maintaining compatibility with the Ethereum ecosystem
-* Ensuring network security and decentralization
+- 🔗 Seamless Bitcoin and EVM integration
+- 🚀 High-throughput and low-latency transaction processing
+- 💡 Multi-asset fuel mechanism
+- 🌉 Advanced cross-chain asset management
+- 🛡️ Multi-layered security architecture
+- 🧰 Rich developer tools and SDK support
 
 ## 2. System Architecture
 
