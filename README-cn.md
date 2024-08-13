@@ -149,18 +149,20 @@ graph TB
 
 ### 3.2 BevmStack桥
 
-BevmStack桥是连接比特币网络和BevmStack链的关键组件。它实现了资产的跨链转移和互操作性。以下序列图展示了其工作流程：
+BevmStack桥是一个去中心化的跨链解决方案,用于实现比特币网络和BevmStack链之间的资产无缝转移和互操作性。它采用了先进的技术,如Taproot、比特币SPV(简化支付验证)和BFT(拜占庭容错)共识,以实现完全去中心化的跨链资产转移。以下序列图展示了其工作流程:
+
 
 ```mermaid
 sequenceDiagram
   participant 用户
   participant 比特币链
-  participant BevmStack桥
+  participant BevmStack去中心化桥
   participant BevmStack链
 
-  用户->>比特币链: 发送BTC
-  比特币链->>BevmStack桥: 确认交易
-  BevmStack桥->>BevmStack链: 铸造等值资产
+  用户->>比特币链: 发起跨链交易
+  比特币链->>BevmStack去中心化桥: 提交交易证明
+  BevmStack去中心化桥->>BevmStack去中心化桥: 验证交易并达成共识
+  BevmStack去中心化桥->>BevmStack链: 执行跨链操作
   BevmStack链->>用户: 接收跨链资产
 ```
 
@@ -203,20 +205,19 @@ graph LR
 
 ### 4.2 跨链资产管理
 
-通过创新的跨链桥技术，BevmStack实现了比特币资产到EVM兼容环境的无缝转换：
+通过创新的去中心化跨链桥技术,BevmStack实现了比特币资产到EVM兼容环境的安全、透明转换:
 
 ```mermaid
 graph TB
-  A[比特币资产] --> B{BevmStack桥}
-  B --> |包装| C[WBTC]
-  B --> |映射| D[BRC20代币]
-  B --> |转换| E[Runes]
+  A[比特币资产] --> B{BevmStack去中心化桥}
+  B --> |验证与共识| C[跨链BTC]
+  B --> |解析与处理| D[跨链BRC20代币]
+  B --> |验证与转换| E[跨链Runes]
   C --> F[BevmStack链]
   D --> F
   E --> F
 ```
-
-这种跨链资产管理机制极大地增强了比特币资产的流动性和使用场景。
+这种去中心化的跨链资产管理机制不仅增强了比特币资产的流动性和使用场景,还保证了跨链过程的安全性和透明度。通过引入去中心化索引机制来解析和处理BRC20/Runes交易,确保了复杂资产类型的跨链转移也具有去中心化特性,提高了整个系统的灵活性和适用性。
 
 ### 4.3 安全性考虑
 
