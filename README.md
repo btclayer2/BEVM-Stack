@@ -149,19 +149,20 @@ This dual virtual machine architecture allows BevmStack to achieve both system-l
 
 ### 3.2 BevmStack Bridge
 
-The BevmStack Bridge is a key component connecting the Bitcoin network and the BevmStack Chain. It enables cross-chain asset transfer and interoperability. The following sequence diagram illustrates its workflow:
+The BevmStack Bridge is a decentralized cross-chain solution designed to enable seamless asset transfer and interoperability between the Bitcoin network and the BevmStack chain. It employs advanced technologies such as Taproot, Bitcoin SPV (Simplified Payment Verification), and BFT (Byzantine Fault Tolerance) consensus to achieve fully decentralized cross-chain asset transfers. The following sequence diagram illustrates its workflow:
 
 ```mermaid
 sequenceDiagram
   participant User
   participant Bitcoin Chain
-  participant BevmStack Bridge
+  participant BevmStack Decentralized Bridge
   participant BevmStack Chain
 
-  User->>Bitcoin Chain: Send BTC
-  Bitcoin Chain->>BevmStack Bridge: Confirm Transaction
-  BevmStack Bridge->>BevmStack Chain: Mint Equivalent Assets
-  BevmStack Chain->>User: Receive Cross-Chain Assets
+  User->>Bitcoin Chain: Initiate cross-chain transaction
+  Bitcoin Chain->>BevmStack Decentralized Bridge: Submit transaction proof
+  BevmStack Decentralized Bridge->>BevmStack Decentralized Bridge: Verify transaction and reach consensus
+  BevmStack Decentralized Bridge->>BevmStack Chain: Execute cross-chain operation
+  BevmStack Chain->>User: Receive cross-chain assets
 ```
 
 This process ensures secure and efficient asset transfer between different chains, providing users with a seamless cross-chain experience.
@@ -203,20 +204,20 @@ This mechanism not only enhances network flexibility but also provides new appli
 
 ### 4.2 Cross-Chain Asset Management
 
-Through innovative cross-chain bridge technology, BevmStack enables seamless conversion of Bitcoin assets to EVM-compatible environments:
+Through innovative decentralized cross-chain bridge technology, BevmStack achieves secure and transparent conversion of Bitcoin assets to EVM-compatible environments:
 
 ```mermaid
 graph TB
-  A[Bitcoin Assets] --> B{BevmStack Bridge}
-  B --> |Wrapping| C[WBTC]
-  B --> |Mapping| D[BRC20 Tokens]
-  B --> |Conversion| E[Runes]
+  A[Bitcoin Assets] --> B{BevmStack Decentralized Bridge}
+  B --> |Verification & Consensus| C[Cross-chain BTC]
+  B --> |Parsing & Processing| D[Cross-chain BRC20 tokens]
+  B --> |Verification & Conversion| E[Cross-chain Runes]
   C --> F[BevmStack Chain]
   D --> F
   E --> F
 ```
 
-This cross-chain asset management mechanism greatly enhances the liquidity and use cases of Bitcoin assets.
+This decentralized cross-chain asset management mechanism not only enhances the liquidity and use cases of Bitcoin assets but also ensures the security and transparency of the cross-chain process. By introducing a decentralized indexing mechanism to parse and process BRC20/Runes transactions, it ensures that complex asset types can also be transferred across chains in a decentralized manner, increasing the flexibility and applicability of the entire system.
 
 ### 4.3 Security Considerations
 
