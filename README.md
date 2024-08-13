@@ -1,4 +1,4 @@
-# BevmStack Technical Architecture
+# BevmStack
 
 ## 1. Introduction
 
