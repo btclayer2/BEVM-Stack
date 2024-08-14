@@ -95,7 +95,7 @@ graph TB
 
 1. **Bitcoin生态系统层**：包括比特币网络、BRC20代币和Runes等。
 2. **BevmStack核心层**：
-   - 共识层：整合了比特币SPV、Taproot共识和PoS共识。
+   - 共识层：整合了比特币SPV、Taproot Consensus和PoS共识。
    - 执行层：包含EVM和WebAssembly虚拟机。
    - 智能合约层：由BevmStack合约和Pallets组成。
 3. **桥接与互操作性层**：实现跨链资产转移和操作。
@@ -145,7 +145,7 @@ graph TB
 
 ### 3.2 BevmStack桥
 
-BevmStack桥是一个去中心化的跨链解决方案,用于实现比特币网络和BevmStack链之间的资产无缝转移和互操作性。它采用了先进的技术,如Taproot、比特币SPV(简化支付验证)和BFT(拜占庭容错)共识,以实现完全去中心化的跨链资产转移。以下序列图展示了其工作流程:
+BevmStack桥是一个去中心化的跨链解决方案,用于实现比特币网络和BevmStack链之间的资产无缝转移和互操作性。它采用了先进的技术,如Taproot Consensus、比特币SPV(简化支付验证)和BFT(拜占庭容错)共识,以实现完全去中心化的跨链资产转移。以下序列图展示了其工作流程:
 
 
 ```mermaid
