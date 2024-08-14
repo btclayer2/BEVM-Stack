@@ -32,8 +32,10 @@ graph TB
           BSPallets[BevmStack Pallets]
       end
       subgraph "Execution Layer"
-          EVM[EVM]
           WASM[WebAssembly]
+          subgraph "EVM in WebAssembly"
+              EVM[EVM]
+          end
       end
       subgraph "Consensus Layer"
           CL[Bitcoin SPV & Taproot Consensus & Proof of Stake]
