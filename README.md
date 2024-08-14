@@ -27,18 +27,16 @@ graph TB
 
   subgraph "BevmStack Core"
       BSC[BevmStack Chain]
-      subgraph "Consensus Layer"
-          BSPV[Bitcoin SPV]
-          Taproot[Taproot Consensus]
-          PoS[Proof of Stake]
+      subgraph "Smart Contract Layer"
+          BSContracts[BevmStack Contracts]
+          BSPallets[BevmStack Pallets]
       end
       subgraph "Execution Layer"
           EVM[EVM]
           WASM[WebAssembly]
       end
-      subgraph "Smart Contract Layer"
-          BSContracts[BevmStack Contracts]
-          BSPallets[BevmStack Pallets]
+      subgraph "Consensus Layer"
+          CL[Bitcoin SPV & Taproot Consensus & Proof of Stake]
       end
   end
 
@@ -65,14 +63,12 @@ graph TB
   BSB --> |Cross-Chain Operations| CrossChain
   CrossChain --> BSC
 
-  BSC --> |Executes| EVM
-  BSC --> |Executes| WASM
-  BSPV --> BSC
-  Taproot --> BSC
-  PoS --> BSC
-
-  EVM --> BSContracts
-  WASM --> BSPallets
+  BSC -->|deploy| BSContracts
+  BSC -->|deploy| BSPallets
+  BSContracts -->|execute| EVM
+  BSPallets -->|execute| WASM
+  EVM -->|broadcast| CL
+  WASM -->|broadcast| CL
 
   BSW --> |Interacts| BSC
   BSE --> |Queries| BSC
@@ -89,7 +85,7 @@ graph TB
   classDef dev fill:#f1e1ff,stroke:#333,stroke-width:1px;
 
   class BTC,BRC20,Runes ecosystem;
-  class BSC,BSPV,Taproot,PoS,EVM,WASM,BSContracts,BSPallets core;
+  class BSC,EVM,WASM,CL,BSContracts,BSPallets core;
   class BSB,CrossChain bridge;
   class BSW,BSE ui;
   class SDK,CLI,TestNet dev;
